@@ -9,10 +9,10 @@ source("../my-func-lib/gsea.visualization.R")
 
 ############################################
 
-load("P:/HKU-SZH/RNAseq/bulk-RNAseq-jun-2022-n15/WNT1.2.3.4.5.RData")
+load("../data/WNT1.2.3.4.5.RData")
 
-load("P:/HKU-SZH/RNAseq/bulk-RNAseq-jun-2022-n15/LLD2.3.4.5.RData")
-load("P:/HKU-SZH/RNAseq/bulk-RNAseq-jun-2022-n15/LLD.RData")
+load("../data/LLD2.3.4.5.RData")
+load("../data/LLD.RData")
 
 UMAPPlot(WNT5)
 pdf("tsne.plot.wnt5.lld5.pdf")
@@ -27,7 +27,7 @@ pdf("tsne.plot.wnt5.lld5.pdf")
 dev.off()
 
 #################################
-load("../nelson/Signature.genes.of.the.8clusters.in.P6.RData")
+load("../data/Signature.genes.of.the.8clusters.in.P6.RData")
 LSIG.mouse<-GETSIGm(MARK.cellPopsName)
 
 sapply(LSIG.mouse, function(x){
@@ -351,7 +351,7 @@ DEG_perio2<-GETDEG2(DEG_perio)
 DEG_WL2<-GETDEG2(DEG_WL)
 
 ########################################
-hBMSC<-read.delim("P:/HKU-SZH/RNAseq/bulk-RNAseq-jun-2022-n15/cuffdiff/human-hBMSC-vs-hBMSCWNT1/gene_exp.diff", sep="\t")
+hBMSC<-read.delim("../data/RNAseq/gene_exp.diff", sep="\t")
 DEGh<-hBMSC %>% filter(significant=="yes") %>% arrange(log2.fold_change.)
 
 ########################################
