@@ -1,11 +1,11 @@
 library(Seurat)
 library(dplyr)
 library(patchwork)
-load("P:/OneDrive - The University Of Hong Kong/resources/TF.CD.receptors.human.mouse.expanded.RData")
-source("P:/OneDrive - The University Of Hong Kong/my-func-lib/WRITE_seurate_to_web.R")
-source("P:/OneDrive - The University Of Hong Kong/my-func-lib/helpers.GETSIG.R")
+load("../resources/TF.CD.receptors.human.mouse.expanded.RData")
+source("../my-func-lib/WRITE_seurate_to_web.R")
+source("../my-func-lib/helpers.GETSIG.R")
 
-source("../../../OneDrive - The University Of Hong Kong/my-func-lib/gsea.visualization.R")
+source("../my-func-lib/gsea.visualization.R")
 
 ############################################
 
@@ -27,7 +27,7 @@ pdf("tsne.plot.wnt5.lld5.pdf")
 dev.off()
 
 #################################
-load("P:/OneDrive - The University Of Hong Kong/nelson/P6/Signature.genes.of.the.8clusters.in.P6.RData")
+load("../nelson/Signature.genes.of.the.8clusters.in.P6.RData")
 LSIG.mouse<-GETSIGm(MARK.cellPopsName)
 
 sapply(LSIG.mouse, function(x){
