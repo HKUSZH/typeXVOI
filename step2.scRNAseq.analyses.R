@@ -430,7 +430,7 @@ VlnPlot(WNT_LLD, features=c("RUNX2", "ADIPOQ"), group.by="OldClust")
 
 
 ###############
-proteomics<-readxl::read_excel("P:/HKU-SZH/proteomics/22030801_SG-DIA/1.core/1.4.difference/summary.compare.xlsx", sheet = "OI__Control")
+proteomics<-readxl::read_excel("../proteomics_summary.compare.xlsx", sheet = "OI__Control")
 DEPs<-proteomics[proteomics[["P-value"]]<0.05, ]
 LDEPs<-sapply(split(DEPs$Gene, sign(DEPs[[8]])), sort)
 LDEGs<-sapply(split(DEG_WL2$genes, sign(DEG_WL2[[2]])), sort)
